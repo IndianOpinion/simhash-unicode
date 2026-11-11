@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace IndianOpinion\Simhash\Tests\Unit;
 
+use IndianOpinion\Simhash\Config;
 use IndianOpinion\Simhash\Simhash;
+use IndianOpinion\Simhash\TextNormalizer;
 use IndianOpinion\Simhash\Tests\Support\Corpus;
 use IndianOpinion\Simhash\Tests\Support\TestCase;
 
@@ -71,5 +73,55 @@ final class RobustnessTest extends TestCase
         self::assertSame(0, proc_close($proc), $err);
         self::assertStringContainsString('hash 80-char English title', $out);
         self::assertStringContainsString('findNearPairs', $out);
+    }
+
+    /**
+     * @return iterable<string, array{0: string}>
+     */
+    public static function hostileLarge(): iterable
+    {
+        yield 'one huge mark cluster over the cap' => [str_repeat("\u{0301}", 360000)];
+        yield 'hyphen chain' => [str_repeat('a-', 150000)];
+        yield 'underscore chain' => [str_repeat('a_', 150000)];
+        yield 'invalid bytes, scrubbed' => [str_repeat("\xFF", 300000)];
+    }
+
+    /**
+     * Inputs near the largest allowed cap must stay linear: a quadratic step
+     * here took minutes before.
+     *
+     * @dataProvider hostileLarge
+     */
+    public function testHostileInputAtLargeCapFinishesInBudget(string $text): void
+    {
+        $s = new Simhash(new Config(maxInputBytes: 1048576, scrub: true));
+        $start = hrtime(true);
+        $s->hash($text);
+        $ms = (hrtime(true) - $start) / 1e6;
+        self::assertLessThan(5000, $ms, 'hash of large hostile input took ' . round($ms) . ' ms');
+    }
+
+    public function testTruncateWalkIsBounded(): void
+    {
+        // Within the walk limit: the whole cluster "b" plus marks is dropped.
+        self::assertSame('a', TextNormalizer::truncate('ab' . str_repeat("\u{0301}", 10), 10));
+        // Beyond it: cut at the code point boundary at or before the limit.
+        $head = TextNormalizer::truncate('ab' . str_repeat("\u{0301}", 300), 200);
+        self::assertSame(1, preg_match('//u', $head));
+        self::assertSame(200, strlen($head));
+    }
+
+    public function testBadOffsetDoesNotDependOnPcreJit(): void
+    {
+        $old = ini_get('pcre.jit');
+        ini_set('pcre.jit', '0');
+        try {
+            $text = str_repeat("\u{0905}", 400000) . "\xFF";
+            self::assertSame(1200000, TextNormalizer::firstBadOffset($text));
+            $ascii = str_repeat('a', 300000);
+            self::assertSame($ascii . "\u{FFFD}", TextNormalizer::scrub($ascii . "\xFF"));
+        } finally {
+            ini_set('pcre.jit', $old === false ? '1' : $old);
+        }
     }
 }

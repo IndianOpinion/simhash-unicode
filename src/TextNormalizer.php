@@ -32,6 +32,9 @@ final class TextNormalizer
     /** Decimal digits in any script, plus the Tamil number signs for 10, 100 and 1000. */
     public const DIGIT_CLASS = '\p{Nd}\x{0BF0}-\x{0BF2}';
 
+    /** Longest walk back, in code points, that truncate() makes to find a grapheme boundary. */
+    public const TRUNCATE_MAX_WALK = 64;
+
     private bool $unavailable = false;
 
     /** @var array<string, string> */
@@ -70,15 +73,34 @@ final class TextNormalizer
         );
     }
 
-    public static function firstBadOffset(string $text): int
+    /**
+     * Byte offset of the first invalid UTF-8 sequence at or after $from, or
+     * the length of $text when there is none.
+     *
+     * Scans in bounded steps so the result does not depend on PCRE's JIT or
+     * its backtrack limit, and stays linear in the input length.
+     */
+    public static function firstBadOffset(string $text, int $from = 0): int
     {
-        $n = preg_match('/\A' . self::UTF8_CHAR . '*+/', $text, $m);
+        $len = strlen($text);
+        $pos = $from;
+        while ($pos < $len) {
+            $n = preg_match('/\G' . self::UTF8_CHAR . '{1,64}+/', $text, $m, 0, $pos);
+            if ($n === false) {
+                throw new InvalidInputException('Could not scan the input for invalid UTF-8: ' . preg_last_error_msg());
+            }
+            if ($n === 0) {
+                break;
+            }
+            $pos += strlen($m[0]);
+        }
 
-        return $n === 1 ? strlen($m[0]) : 0;
+        return $pos;
     }
 
     /**
-     * Replaces every invalid byte sequence with U+FFFD.
+     * Replaces every invalid byte sequence with U+FFFD. Linear in the input
+     * length.
      */
     public static function scrub(string $text): string
     {
@@ -86,10 +108,9 @@ final class TextNormalizer
         $len = strlen($text);
         $pos = 0;
         while ($pos < $len) {
-            $rest = substr($text, $pos);
-            $good = self::firstBadOffset($rest);
-            $out .= substr($rest, 0, $good);
-            $pos += $good;
+            $good = self::firstBadOffset($text, $pos);
+            $out .= substr($text, $pos, $good - $pos);
+            $pos = $good;
             if ($pos < $len) {
                 $out .= "\u{FFFD}";
                 $pos++;
@@ -107,34 +128,42 @@ final class TextNormalizer
      * Cuts valid UTF-8 at the last grapheme boundary at or before $maxBytes.
      * A combining mark, joiner or virama-joined consonant is never separated
      * from the character before it.
+     *
+     * The walk back is bounded by TRUNCATE_MAX_WALK code points. A cluster
+     * longer than that (only hostile input builds one) is cut at the code
+     * point boundary instead, so the cost never grows with the input.
      */
     public static function truncate(string $text, int $maxBytes): string
     {
         if (strlen($text) <= $maxBytes) {
             return $text;
         }
-        $cut = $maxBytes;
-        while ($cut > 0 && (ord($text[$cut]) & 0xC0) === 0x80) {
-            $cut--;
+        $start = $maxBytes;
+        while ($start > 0 && (ord($text[$start]) & 0xC0) === 0x80) {
+            $start--;
         }
-        $head = substr($text, 0, $cut);
-        $tail = substr($text, $cut);
-        $extend = '[\p{M}\x{200C}\x{200D}\x{FE00}-\x{FE0F}\x{1F3FB}-\x{1F3FF}]';
-        while ($head !== '') {
-            $tailStartsExtend = preg_match('/\A' . $extend . '/u', $tail) === 1;
-            $headEndsJoin = preg_match('/[' . Graphemes::VIRAMA . '\x{200D}]\z/u', $head) === 1;
-            if (!$tailStartsExtend && !$headEndsJoin) {
+        $extend = '/\A[\p{M}\x{200C}\x{200D}\x{FE00}-\x{FE0F}\x{1F3FB}-\x{1F3FF}]/u';
+        $join = '/\A[' . Graphemes::VIRAMA . '\x{200D}]\z/u';
+        $cut = $start;
+        for ($step = 0; $cut > 0; $step++) {
+            if ($step >= self::TRUNCATE_MAX_WALK) {
+                $cut = $start;
                 break;
             }
-            if (preg_match('/(.)\z/us', $head, $m) === 1) {
-                $head = substr($head, 0, -strlen($m[1]));
-                $tail = $m[1] . $tail;
-            } else {
+            $prev = $cut - 1;
+            while ($prev > 0 && (ord($text[$prev]) & 0xC0) === 0x80) {
+                $prev--;
+            }
+            $last = substr($text, $prev, $cut - $prev);
+            $lead = ord($text[$cut]);
+            $next = substr($text, $cut, $lead < 0x80 ? 1 : ($lead < 0xE0 ? 2 : ($lead < 0xF0 ? 3 : 4)));
+            if (preg_match($extend, $next) !== 1 && preg_match($join, $last) !== 1) {
                 break;
             }
+            $cut = $prev;
         }
 
-        return $head;
+        return substr($text, 0, $cut);
     }
 
     /**

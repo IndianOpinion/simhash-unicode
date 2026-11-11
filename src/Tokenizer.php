@@ -66,7 +66,7 @@ final class Tokenizer
     public const NO_SPACE = ['cjk', 'thai', 'lao', 'khmer', 'myanmar'];
 
     private const URL_OR_EMAIL = '/(?<![\p{L}\p{N}\p{M}.@\/])(?:(?:https?:\/\/|www\.)[^\s]++'
-        . '|[\p{L}\p{N}\p{M}._%+\-]++@[\p{L}\p{N}\p{M}\-]++(?:\.[\p{L}\p{N}\p{M}\-]++)+)/iu';
+        . '|(?<![_%+\-])[\p{L}\p{N}\p{M}._%+\-]++@[\p{L}\p{N}\p{M}\-]++(?:\.[\p{L}\p{N}\p{M}\-]++)+)/iu';
 
     private const EMOJI_PIC = '[\x{1F000}-\x{1FAFF}\x{2600}-\x{27BF}\x{2300}-\x{23FF}\x{2B00}-\x{2BFF}'
         . '\x{3030}\x{303D}\x{3297}\x{3299}\x{00A9}\x{00AE}\x{203C}\x{2049}\x{2139}]';
