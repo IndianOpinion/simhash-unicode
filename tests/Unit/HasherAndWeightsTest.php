@@ -133,7 +133,7 @@ final class HasherAndWeightsTest extends TestCase
      */
     public function testBadWeightFromCallbackRejected(float $w): void
     {
-        $s = new Simhash(new Config(weights: static fn (): float => $w));
+        $s = new Simhash(new Config(weights: static fn (): float => $w, weightsId: 'bad'));
         $this->expectException(ConfigException::class);
         $this->expectExceptionMessage('monsoon');
         $s->hash('monsoon arrives early');
@@ -141,7 +141,7 @@ final class HasherAndWeightsTest extends TestCase
 
     public function testAllZeroWeightsGiveEmpty(): void
     {
-        $s = new Simhash(new Config(weights: static fn (): float => 0.0));
+        $s = new Simhash(new Config(weights: static fn (): float => 0.0, weightsId: 'zero'));
         $fp = $s->hash('Monsoon arrives early in Kerala');
         self::assertTrue($fp->isEmpty());
         self::assertSame(0, $fp->featureCount());
@@ -153,5 +153,43 @@ final class HasherAndWeightsTest extends TestCase
             (new Config(hasher: new FixedHasher(['a' => '12345678'])))->id(),
             (new Config(hasher: new FixedHasher(['a' => '87654321'])))->id()
         );
+    }
+
+    public function testCallbackNeedsAName(): void
+    {
+        $this->expectException(ConfigException::class);
+        $this->expectExceptionMessage('weightsId');
+        new Config(weights: static fn (): float => 1.0);
+    }
+
+    public function testCloseWeightsGetDistinctIds(): void
+    {
+        $a = new Config(wordWeight: 1.0);
+        $b = new Config(wordWeight: 1.0 + 1e-9);
+        self::assertNotSame($a->id(), $b->id());
+        self::assertNotSame(
+            (new Config(weights: ['x' => 0.5]))->id(),
+            (new Config(weights: ['x' => 0.5 + 1e-9]))->id()
+        );
+        self::assertSame((new Config(wordWeight: 0.25))->id(), (new Config(wordWeight: 0.25))->id());
+    }
+
+    public function testOutputDoesNotDependOnPrecisionSetting(): void
+    {
+        $weights = ['monsoon' => 0.30000000000000004, 'arrives' => 0.3];
+        $s = new Simhash(new Config(weights: $weights));
+        $before = $s->explain('monsoon arrives early in kerala');
+        $old = ini_get('precision');
+        $oldSer = ini_get('serialize_precision');
+        ini_set('precision', '3');
+        ini_set('serialize_precision', '3');
+        try {
+            $s2 = new Simhash(new Config(weights: $weights));
+            self::assertSame($s->configId(), $s2->configId());
+            self::assertSame($before['sums'], $s2->explain('monsoon arrives early in kerala')['sums']);
+        } finally {
+            ini_set('precision', $old === false ? '14' : $old);
+            ini_set('serialize_precision', $oldSer === false ? '-1' : $oldSer);
+        }
     }
 }

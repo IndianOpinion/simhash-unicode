@@ -80,7 +80,7 @@ final class Config
     /**
      * @param list<int> $wordShingles
      * @param array<string, float|int>|callable|null $weights map of token to weight, or
-     *        fn(string $feature, string $kind, int $position): float
+     *        fn(string $feature, string $kind, int $position, float $default): float (needs $weightsId)
      */
     public function __construct(
         ?Hasher $hasher = null,
@@ -173,6 +173,12 @@ final class Config
             $this->weightMap = $map;
             $this->weightCallback = null;
         } elseif ($weights !== null) {
+            if (trim($weightsId) === '') {
+                throw new ConfigException(
+                    'A weight callback needs a weightsId that names it. A closure cannot be identified by value, '
+                    . 'and without a name two different callbacks would share one configuration id.'
+                );
+            }
             $this->weightMap = null;
             $this->weightCallback = Closure::fromCallable($weights);
         } else {
@@ -213,7 +219,11 @@ final class Config
     public function describe(): string
     {
         if ($this->weightMap !== null) {
-            $weights = 'map:' . hash('xxh64', serialize($this->weightMap));
+            $pairs = [];
+            foreach ($this->weightMap as $token => $w) {
+                $pairs[] = strlen((string) $token) . ':' . $token . '=' . self::num($w);
+            }
+            $weights = 'map:' . hash('xxh64', implode(';', $pairs));
         } elseif ($this->weightCallback !== null) {
             $weights = 'callback:' . $this->weightsId;
         } else {
@@ -447,8 +457,15 @@ final class Config
         }
     }
 
+    /**
+     * Canonical text of a weight, independent of the precision ini settings.
+     * Six decimals when that is exact, else the IEEE 754 bytes in hex, so two
+     * weights that give different bits never share an id.
+     */
     private static function num(float $f): string
     {
-        return rtrim(rtrim(sprintf('%.6F', $f), '0'), '.');
+        $short = rtrim(rtrim(sprintf('%.6F', $f), '0'), '.');
+
+        return (float) $short === $f ? $short : 'x' . bin2hex(pack('E', $f));
     }
 }

@@ -6,6 +6,7 @@ namespace IndianOpinion\Simhash\Tests\Unit;
 
 use IndianOpinion\Simhash\Exception\InvalidInputException;
 use IndianOpinion\Simhash\Fingerprint;
+use IndianOpinion\Simhash\MatchResult;
 use IndianOpinion\Simhash\Simhash;
 use IndianOpinion\Simhash\Tests\Support\TestCase;
 
@@ -129,5 +130,18 @@ final class RepresentationTest extends TestCase
         $empty = Fingerprint::fromArray($s->hash('')->toArray());
         self::assertTrue($empty->isEmpty());
         self::assertSame('0000000000000000', (string) $empty);
+    }
+
+    public function testStoredRowValidation(): void
+    {
+        $s = new Simhash();
+        $row = $s->hash('')->toArray();
+        unset($row['features']);
+        $empty = Fingerprint::fromArray($row);
+        self::assertTrue($empty->isEmpty(), 'the empty flag alone marks the sentinel');
+        self::assertSame(MatchResult::EMPTY, $s->isNearDuplicate($empty, $empty)->reason);
+
+        $this->expectException(InvalidInputException::class);
+        Fingerprint::fromArray(['hex' => '0000000000000001', 'config' => 'x', 'tokens' => -1]);
     }
 }

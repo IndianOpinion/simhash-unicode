@@ -110,8 +110,16 @@ final class Fingerprint
         ) {
             throw new InvalidInputException('Stored fingerprint must have hex, config, tokens, features and flags.');
         }
+        if (($tokens !== null && $tokens < 0) || ($features !== null && $features < 0)) {
+            throw new InvalidInputException('Stored token and feature counts cannot be negative.');
+        }
         $bytes = Bits::fromHex($hex);
-        $empty = $features === 0;
+        // Either signal marks the sentinel, so a row stored without its
+        // feature count still never matches anything.
+        $empty = $features === 0 || in_array('empty', $flags, true);
+        if ($empty) {
+            $bytes = "\0\0\0\0\0\0\0\0";
+        }
 
         return new self(
             $bytes,

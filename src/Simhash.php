@@ -378,7 +378,9 @@ final class Simhash
                 );
             }
             $used++;
-            $gk = (string) $w;
+            // Exact key: (string) $w follows the precision ini setting and
+            // could merge two different weights on one host but not another.
+            $gk = pack('E', $w);
             if (!isset($groups[$gk])) {
                 $groups[$gk] = new BitCounter($w, $fast);
             }
