@@ -1,0 +1,49 @@
+{"_meta": {"licence": "CC0-1.0", "note": "Expected relation under the default configuration and threshold 6."}}
+{"a": "en-01", "b": "en-02", "relation": "near", "note": "punctuation only"}
+{"a": "en-03", "b": "en-04", "relation": "near", "note": "case only"}
+{"a": "en-06", "b": "en-07", "relation": "near", "note": "trailing full stop"}
+{"a": "en-01", "b": "en-13", "relation": "near", "note": "same words reordered, one added"}
+{"a": "en-06", "b": "en-14", "relation": "near", "note": "articles removed"}
+{"a": "en-03", "b": "en-15", "relation": "far", "note": "one content word changed: simhash limit, see README"}
+{"a": "en-01", "b": "en-05", "relation": "far", "note": "unrelated"}
+{"a": "en-08", "b": "en-12", "relation": "far", "note": "unrelated"}
+{"a": "hi-01", "b": "hi-02", "relation": "near", "note": "comma versus danda"}
+{"a": "hi-01", "b": "hi-09", "relation": "near", "note": "candrabindu versus anusvara in one word"}
+{"a": "hi-01", "b": "hi-10", "relation": "far", "note": "added prefix: simhash limit, use stop words or weights"}
+{"a": "hi-03", "b": "hi-07", "relation": "far", "note": "unrelated"}
+{"a": "mr-01", "b": "mr-02", "relation": "far", "note": "unrelated"}
+{"a": "bn-02", "b": "bn-03", "relation": "near", "note": "exclamation mark"}
+{"a": "bn-01", "b": "bn-06", "relation": "far", "note": "unrelated"}
+{"a": "te-02", "b": "te-03", "relation": "near", "note": "full stop"}
+{"a": "te-04", "b": "te-13", "relation": "far", "note": "one word of five changed: distance 7, just above the default threshold"}
+{"a": "te-02", "b": "te-09", "relation": "far", "note": "unrelated"}
+{"a": "ta-02", "b": "ta-03", "relation": "near", "note": "exclamation mark"}
+{"a": "ta-02", "b": "ta-13", "relation": "far", "note": "added prefix on a short title"}
+{"a": "ta-01", "b": "ta-04", "relation": "far", "note": "unrelated"}
+{"a": "kn-02", "b": "kn-03", "relation": "near", "note": "exclamation mark"}
+{"a": "kn-01", "b": "kn-07", "relation": "far", "note": "unrelated"}
+{"a": "ml-01", "b": "ml-02", "relation": "near", "note": "atomic versus ZWJ chillu"}
+{"a": "ml-05", "b": "ml-06", "relation": "near", "note": "full stop"}
+{"a": "ml-03", "b": "ml-11", "relation": "far", "note": "unrelated"}
+{"a": "gu-02", "b": "gu-03", "relation": "near", "note": "exclamation mark"}
+{"a": "gu-04", "b": "gu-08", "relation": "far", "note": "unrelated"}
+{"a": "pa-02", "b": "pa-03", "relation": "near", "note": "exclamation mark"}
+{"a": "pa-04", "b": "pa-07", "relation": "far", "note": "unrelated"}
+{"a": "or-02", "b": "or-03", "relation": "near", "note": "exclamation mark"}
+{"a": "or-04", "b": "or-08", "relation": "far", "note": "unrelated"}
+{"a": "ur-02", "b": "ur-03", "relation": "near", "note": "exclamation mark"}
+{"a": "ar-02", "b": "ar-03", "relation": "near", "note": "exclamation mark"}
+{"a": "ur-01", "b": "ar-01", "relation": "far", "note": "unrelated"}
+{"a": "zh-01", "b": "zh-02", "relation": "near", "note": "fullwidth exclamation mark"}
+{"a": "zh-01", "b": "zh-13", "relation": "far", "note": "one character changed: closer than unrelated, still above 6"}
+{"a": "zh-01", "b": "zh-03", "relation": "far", "note": "unrelated"}
+{"a": "ja-01", "b": "ja-02", "relation": "near", "note": "fullwidth exclamation mark"}
+{"a": "ja-03", "b": "ja-07", "relation": "far", "note": "unrelated"}
+{"a": "th-01", "b": "th-02", "relation": "near", "note": "exclamation mark"}
+{"a": "th-03", "b": "th-06", "relation": "far", "note": "unrelated"}
+{"a": "ko-01", "b": "ko-02", "relation": "near", "note": "exclamation mark"}
+{"a": "ko-03", "b": "ko-09", "relation": "far", "note": "unrelated"}
+{"a": "sp-06", "b": "sp-07", "relation": "near", "note": "Devanagari digits versus ASCII digits"}
+{"a": "sp-08", "b": "sp-09", "relation": "near", "note": "same host, different path"}
+{"a": "mx-01", "b": "mx-11", "relation": "far", "note": "unrelated"}
+{"a": "mx-05", "b": "mx-06", "relation": "far", "note": "unrelated"}

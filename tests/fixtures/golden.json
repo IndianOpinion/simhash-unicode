@@ -1,0 +1,1068 @@
+{
+    "_meta": {
+        "algorithm": 1,
+        "config_default": "shu1-57555a8696b2",
+        "config_shingles": "shu1-a4e2dab31381",
+        "config_loose": "shu1-3a3868440943"
+    },
+    "ur-01": {
+        "default": "490aa52b802c62c3",
+        "shingles": "d90ba52b843d6447",
+        "loose": "490aa52b802c62c3"
+    },
+    "ur-02": {
+        "default": "1d415446aa718204",
+        "shingles": "1d68560ea7f58784",
+        "loose": "1d415446aa718204"
+    },
+    "ur-03": {
+        "default": "1d415446aa718204",
+        "shingles": "1d68560ea7f58784",
+        "loose": "1d415446aa718204"
+    },
+    "ur-04": {
+        "default": "0848152e82706a32",
+        "shingles": "3d6bb58ed073f77e",
+        "loose": "0848152e82706a32"
+    },
+    "ur-05": {
+        "default": "0d0b3417c1385141",
+        "shingles": "0d6b36bfc878f146",
+        "loose": "0d0b3417c1385141"
+    },
+    "ur-06": {
+        "default": "a7415880804c16b3",
+        "shingles": "a7def80aa34517ab",
+        "loose": "a7415880804c16b3"
+    },
+    "ar-01": {
+        "default": "84ca8120e1278228",
+        "shingles": "04c38364f123aa78",
+        "loose": "84ca8120e1278228"
+    },
+    "ar-02": {
+        "default": "f334820089e64a82",
+        "shingles": "f3f07646298ed89b",
+        "loose": "f334820089e64a82"
+    },
+    "ar-03": {
+        "default": "f334820089e64a82",
+        "shingles": "f3f07646298ed89b",
+        "loose": "f334820089e64a82"
+    },
+    "ar-04": {
+        "default": "5cc01986037b6d78",
+        "shingles": "7448d9ad057bed79",
+        "loose": "5cc01986037b6d78"
+    },
+    "ar-05": {
+        "default": "059c0a45123b0700",
+        "shingles": "245f9af012130724",
+        "loose": "059c0a45123b0700"
+    },
+    "ar-06": {
+        "default": "c019016180408090",
+        "shingles": "811db371ed47b2d6",
+        "loose": "c019016180408090"
+    },
+    "bn-01": {
+        "default": "c9cd488d0d74c402",
+        "shingles": "ebcdc8ed0c7e5422",
+        "loose": "c9cd488d0d74c402"
+    },
+    "bn-02": {
+        "default": "06068e5228071221",
+        "shingles": "2e0e9e93ac061221",
+        "loose": "06068e5228071221"
+    },
+    "bn-03": {
+        "default": "06068e5228071221",
+        "shingles": "2e0e9e93ac061221",
+        "loose": "06068e5228071221"
+    },
+    "bn-04": {
+        "default": "4967f76faef683cf",
+        "shingles": "493e876e96542209",
+        "loose": "4967f76faef683cf"
+    },
+    "bn-05": {
+        "default": "c585b667c4ea2df1",
+        "shingles": "43018377d4e72e00",
+        "loose": "c585b667c4ea2df1"
+    },
+    "bn-06": {
+        "default": "407234401895a2a8",
+        "shingles": "4a6aed611e5023d8",
+        "loose": "407234401895a2a8"
+    },
+    "bn-07": {
+        "default": "eef8c3a5ef44bc1a",
+        "shingles": "bc79f7a46f457c18",
+        "loose": "eef8c3a5ef44bc1a"
+    },
+    "bn-08": {
+        "default": "614773a0c381dbc9",
+        "shingles": "a142b020c781e781",
+        "loose": "614773a0c381dbc9"
+    },
+    "bn-09": {
+        "default": "444c6bce8127781a",
+        "shingles": "45476a64eb2d308a",
+        "loose": "444c6bce8127781a"
+    },
+    "bn-10": {
+        "default": "102a2af0b7aaa611",
+        "shingles": "e8ee26b6a2aba7f9",
+        "loose": "102a2af0b7aaa611"
+    },
+    "bn-11": {
+        "default": "0d42d8a5c6482010",
+        "shingles": "dc6b68f9e6686d51",
+        "loose": "0d42d8a5c6482010"
+    },
+    "bn-12": {
+        "default": "4a289c90eba2e401",
+        "shingles": "4a20bcb042a2e159",
+        "loose": "4a289c90eba2e401"
+    },
+    "zh-01": {
+        "default": "81da444118a64047",
+        "shingles": "89da54037ca7f847",
+        "loose": "81da444118a64047"
+    },
+    "zh-02": {
+        "default": "81da444118a64047",
+        "shingles": "89da54037ca7f847",
+        "loose": "81da444118a64047"
+    },
+    "zh-03": {
+        "default": "6022e92a0e45a100",
+        "shingles": "2a32e96a0648a513",
+        "loose": "6022e92a0e45a100"
+    },
+    "zh-04": {
+        "default": "9fe3944a630c8042",
+        "shingles": "94f3747a728c9052",
+        "loose": "9fe3944a630c8042"
+    },
+    "zh-05": {
+        "default": "63d57d089cf647bb",
+        "shingles": "258874009df285bb",
+        "loose": "63d57d089cf647bb"
+    },
+    "zh-06": {
+        "default": "2e0a26c728baaa24",
+        "shingles": "790c2ed72efd7807",
+        "loose": "2e0a26c728baaa24"
+    },
+    "zh-07": {
+        "default": "f4c042a8530a3758",
+        "shingles": "f484c6b885aa3f2a",
+        "loose": "f4c042a8530a3758"
+    },
+    "zh-08": {
+        "default": "4c090262ca622080",
+        "shingles": "69cb43e0de714a87",
+        "loose": "4c090262ca622080"
+    },
+    "zh-09": {
+        "default": "ba975108dc032622",
+        "shingles": "f9bf4268b042376a",
+        "loose": "ba975108dc032622"
+    },
+    "zh-10": {
+        "default": "1896baed47883526",
+        "shingles": "3997baaf679d651e",
+        "loose": "1896baed47883526"
+    },
+    "zh-11": {
+        "default": "aa7039a7445003cf",
+        "shingles": "eae07fe328584bce",
+        "loose": "aa7039a7445003cf"
+    },
+    "zh-12": {
+        "default": "578213c4e2d501c3",
+        "shingles": "778a138fb2d59f83",
+        "loose": "578213c4e2d501c3"
+    },
+    "ja-01": {
+        "default": "96fe85cc9409ef10",
+        "shingles": "9f9ea5e8f5994e70",
+        "loose": "96fe85cc9409ef10"
+    },
+    "ja-02": {
+        "default": "96fe85cc9409ef10",
+        "shingles": "9f9ea5e8f5994e70",
+        "loose": "96fe85cc9409ef10"
+    },
+    "ja-03": {
+        "default": "161d0692d49c0a1a",
+        "shingles": "369d9e96dcbcff3e",
+        "loose": "161d0692d49c0a1a"
+    },
+    "ja-04": {
+        "default": "4050e3abd84b75d9",
+        "shingles": "5277f3afd879f9f5",
+        "loose": "4050e3abd84b75d9"
+    },
+    "ja-05": {
+        "default": "21908de87e4218d9",
+        "shingles": "e390cfe87e4a2fda",
+        "loose": "21908de87e4218d9"
+    },
+    "ja-06": {
+        "default": "cf80a2b163cac012",
+        "shingles": "cd808af00f5a421a",
+        "loose": "cf80a2b163cac012"
+    },
+    "ja-07": {
+        "default": "4c0d1e1a8acf8233",
+        "shingles": "753d3b1b49b7bb9a",
+        "loose": "4c0d1e1a8acf8233"
+    },
+    "ja-08": {
+        "default": "a049891a09900862",
+        "shingles": "a05da99b09bb0a31",
+        "loose": "a049891a09900862"
+    },
+    "ja-09": {
+        "default": "6e6610401ee1a748",
+        "shingles": "3c663048dfa12fcb",
+        "loose": "6e6610401ee1a748"
+    },
+    "ja-10": {
+        "default": "c634107248178b81",
+        "shingles": "c6b619b64803bf45",
+        "loose": "c634107248178b81"
+    },
+    "ja-11": {
+        "default": "3ee25196ab88636b",
+        "shingles": "f4d25496282ea66b",
+        "loose": "3ee25196ab88636b"
+    },
+    "ja-12": {
+        "default": "28283231a0714712",
+        "shingles": "3eb1b078a6614772",
+        "loose": "28283231a0714712"
+    },
+    "zh-13": {
+        "default": "811a555298a74263",
+        "shingles": "80a87c03dcaff127",
+        "loose": "811a555298a74263"
+    },
+    "hi-01": {
+        "default": "6216748d1191a37d",
+        "shingles": "2a1df7ad1797e3dd",
+        "loose": "6216748d1191a37d"
+    },
+    "hi-02": {
+        "default": "6216748d1191a37d",
+        "shingles": "2815f7ad1797e3dd",
+        "loose": "6216748d1191a37d"
+    },
+    "hi-03": {
+        "default": "2006444e502a7c52",
+        "shingles": "e50f5a6cf00add42",
+        "loose": "2006444e502a7c52"
+    },
+    "hi-04": {
+        "default": "e196bccc11682369",
+        "shingles": "ef97b4ad116e0271",
+        "loose": "e196bccc11682369"
+    },
+    "hi-05": {
+        "default": "f084a4bd96517374",
+        "shingles": "f0a0faf7b26561fc",
+        "loose": "f084a4bd96517374"
+    },
+    "hi-06": {
+        "default": "e2cf9188dc835740",
+        "shingles": "e1efc0985c83756b",
+        "loose": "e2cf9188dc835740"
+    },
+    "hi-07": {
+        "default": "10c64251a20e57d3",
+        "shingles": "03c6acbd626c3757",
+        "loose": "10c64251a20e57d3"
+    },
+    "hi-08": {
+        "default": "7bffb8d07eb7c26d",
+        "shingles": "6befb1506ff49abc",
+        "loose": "7bffb8d07eb7c26d"
+    },
+    "mr-01": {
+        "default": "c0ea82223200008d",
+        "shingles": "54fed22776093087",
+        "loose": "c0ea82223200008d"
+    },
+    "mr-02": {
+        "default": "a6ab5f546107e216",
+        "shingles": "a2afdd464177f7da",
+        "loose": "a6ab5f546107e216"
+    },
+    "mr-03": {
+        "default": "c27f5501a2161bb0",
+        "shingles": "467ff70daf173fb0",
+        "loose": "c27f5501a2161bb0"
+    },
+    "mr-04": {
+        "default": "1f5b54487c268dc3",
+        "shingles": "5d1b12c85c2e8d83",
+        "loose": "1f5b54487c268dc3"
+    },
+    "hi-09": {
+        "default": "621e748d1090e379",
+        "shingles": "aa15b5ad1793e3dc",
+        "loose": "621e748d1090e379"
+    },
+    "hi-10": {
+        "default": "e210f48d2391e359",
+        "shingles": "aa1af5ad1297e3dc",
+        "loose": "e210f48d2391e359"
+    },
+    "gu-01": {
+        "default": "d9a9e8e5a88d0d5b",
+        "shingles": "dda1e9f1e88d0a7b",
+        "loose": "d9a9e8e5a88d0d5b"
+    },
+    "gu-02": {
+        "default": "e980839a41c34710",
+        "shingles": "fac1d69f40cb678a",
+        "loose": "e980839a41c34710"
+    },
+    "gu-03": {
+        "default": "e980839a41c34710",
+        "shingles": "fac1d69f40cb678a",
+        "loose": "e980839a41c34710"
+    },
+    "gu-04": {
+        "default": "499b19dd6dcb54c8",
+        "shingles": "d9b38d5fe5473448",
+        "loose": "499b19dd6dcb54c8"
+    },
+    "gu-05": {
+        "default": "d31022c90444524a",
+        "shingles": "fbf0bbeb10d0d640",
+        "loose": "d31022c90444524a"
+    },
+    "gu-06": {
+        "default": "4220edf4027a8b05",
+        "shingles": "5322fcf6227e2805",
+        "loose": "4220edf4027a8b05"
+    },
+    "gu-07": {
+        "default": "edab2267e52f7b8e",
+        "shingles": "0d986a27e5ad7a8e",
+        "loose": "edab2267e52f7b8e"
+    },
+    "gu-08": {
+        "default": "e3f926d0703c8009",
+        "shingles": "3bdb22b6701c00a9",
+        "loose": "e3f926d0703c8009"
+    },
+    "gu-09": {
+        "default": "2ed58a0013062c50",
+        "shingles": "daf59f6513cb2f50",
+        "loose": "2ed58a0013062c50"
+    },
+    "gu-10": {
+        "default": "b2209011834d82a5",
+        "shingles": "b6a2b138e14d86a5",
+        "loose": "b2209011834d82a5"
+    },
+    "gu-11": {
+        "default": "d860506b57cfc013",
+        "shingles": "d060f16b5206d810",
+        "loose": "d860506b57cfc013"
+    },
+    "gu-12": {
+        "default": "e93bd3d240461a19",
+        "shingles": "fb37dad663476a1a",
+        "loose": "e93bd3d240461a19"
+    },
+    "pa-01": {
+        "default": "848231804940ad98",
+        "shingles": "cda67138df00add9",
+        "loose": "848231804940ad98"
+    },
+    "pa-02": {
+        "default": "53b63095717e8c65",
+        "shingles": "77b071d743ec8c6f",
+        "loose": "53b63095717e8c65"
+    },
+    "pa-03": {
+        "default": "53b63095717e8c65",
+        "shingles": "77b071d743ec8c6f",
+        "loose": "53b63095717e8c65"
+    },
+    "pa-04": {
+        "default": "8186302130118c8d",
+        "shingles": "838336613838e817",
+        "loose": "8186302130118c8d"
+    },
+    "pa-05": {
+        "default": "40b0a0a6c61e7f42",
+        "shingles": "669e0626071ef742",
+        "loose": "40b0a0a6c61e7f42"
+    },
+    "pa-06": {
+        "default": "f9cc2245ac4030d7",
+        "shingles": "f2d40051adc426c7",
+        "loose": "f9cc2245ac4030d7"
+    },
+    "pa-07": {
+        "default": "9081115015d79e8f",
+        "shingles": "89819d723dd79685",
+        "loose": "9081115015d79e8f"
+    },
+    "pa-08": {
+        "default": "c746259105025811",
+        "shingles": "46663013579ee80d",
+        "loose": "c746259105025811"
+    },
+    "pa-09": {
+        "default": "2a34b0018c804441",
+        "shingles": "3f74d0f148ee4459",
+        "loose": "2a34b0018c804441"
+    },
+    "pa-10": {
+        "default": "838590203001c909",
+        "shingles": "c7cd5000780df97c",
+        "loose": "838590203001c909"
+    },
+    "pa-11": {
+        "default": "fd45a1ad1c97882d",
+        "shingles": "f545b2dd0e93990d",
+        "loose": "fd45a1ad1c97882d"
+    },
+    "pa-12": {
+        "default": "870c30c103178c05",
+        "shingles": "872d33ed23150d4f",
+        "loose": "870c30c103178c05"
+    },
+    "ko-01": {
+        "default": "9b0aa82bb18f3c76",
+        "shingles": "1f1fa92bb38f3cce",
+        "loose": "9b0aa82bb18f3c76"
+    },
+    "ko-02": {
+        "default": "9b0aa82bb18f3c76",
+        "shingles": "1f1fa92bb38f3cce",
+        "loose": "9b0aa82bb18f3c76"
+    },
+    "ko-03": {
+        "default": "ad49cf8ed05ec4d5",
+        "shingles": "8989ab9ad45c05d0",
+        "loose": "ad49cf8ed05ec4d5"
+    },
+    "ko-04": {
+        "default": "a1ec36e0ac279193",
+        "shingles": "a5f837809807d9ba",
+        "loose": "a1ec36e0ac279193"
+    },
+    "ko-05": {
+        "default": "79d172704a8ab3ba",
+        "shingles": "715362204a8e3a36",
+        "loose": "79d172704a8ab3ba"
+    },
+    "ko-06": {
+        "default": "43f52549af0e94a0",
+        "shingles": "42f5556fbf0abd24",
+        "loose": "43f52549af0e94a0"
+    },
+    "ko-07": {
+        "default": "622fc8c07c200808",
+        "shingles": "a11bd0d16f3c1d1a",
+        "loose": "622fc8c07c200808"
+    },
+    "ko-08": {
+        "default": "a134488000800018",
+        "shingles": "a134e8c625ca2018",
+        "loose": "a134488000800018"
+    },
+    "ko-09": {
+        "default": "df286597f420c038",
+        "shingles": "cfb8c3ddf420a458",
+        "loose": "df286597f420c038"
+    },
+    "ko-10": {
+        "default": "ca07e00101aa8b34",
+        "shingles": "fa8d6609e5ba8b36",
+        "loose": "ca07e00101aa8b34"
+    },
+    "ko-11": {
+        "default": "f190a2396201804a",
+        "shingles": "e78022a9222189e2",
+        "loose": "f190a2396201804a"
+    },
+    "ko-12": {
+        "default": "9452e440952080c1",
+        "shingles": "84516860ccf39943",
+        "loose": "9452e440952080c1"
+    },
+    "kn-01": {
+        "default": "7ff91caebdf3ce8e",
+        "shingles": "fb79bcafa152ccae",
+        "loose": "7ff91caebdf3ce8e"
+    },
+    "kn-02": {
+        "default": "461938512fb56541",
+        "shingles": "4e00701327b165a6",
+        "loose": "461938512fb56541"
+    },
+    "kn-03": {
+        "default": "461938512fb56541",
+        "shingles": "4e00701327b165a6",
+        "loose": "461938512fb56541"
+    },
+    "kn-04": {
+        "default": "40021a1cc3069192",
+        "shingles": "59229a8dffded78b",
+        "loose": "40021a1cc3069192"
+    },
+    "kn-05": {
+        "default": "78811808de011340",
+        "shingles": "7da35a78de114979",
+        "loose": "78811808de011340"
+    },
+    "kn-06": {
+        "default": "f3a25e6ddc0f69ac",
+        "shingles": "6fb45cccd40f7bed",
+        "loose": "f3a25e6ddc0f69ac"
+    },
+    "kn-07": {
+        "default": "df1ab17399e79142",
+        "shingles": "d61a916389ef9162",
+        "loose": "df1ab17399e79142"
+    },
+    "kn-08": {
+        "default": "6b99003441095a41",
+        "shingles": "2f6d833d61d94a64",
+        "loose": "6b99003441095a41"
+    },
+    "kn-09": {
+        "default": "064900f164002880",
+        "shingles": "476942f5f410aa98",
+        "loose": "064900f164002880"
+    },
+    "kn-10": {
+        "default": "024641020800c588",
+        "shingles": "92fe41be5c1de78b",
+        "loose": "024641020800c588"
+    },
+    "kn-11": {
+        "default": "210452c410340a82",
+        "shingles": "a10359e436a06a86",
+        "loose": "210452c410340a82"
+    },
+    "kn-12": {
+        "default": "502e610448b84018",
+        "shingles": "4ebe64525ab14099",
+        "loose": "502e610448b84018"
+    },
+    "en-01": {
+        "default": "50f09cd664925983",
+        "shingles": "32f00ff760b2392b",
+        "loose": "50f09cd664925983"
+    },
+    "en-02": {
+        "default": "50f09cd664925983",
+        "shingles": "32f00ff760b2392b",
+        "loose": "50f09cd664925983"
+    },
+    "en-03": {
+        "default": "12a544c00d117f93",
+        "shingles": "be8c95e197817fb7",
+        "loose": "12a544c00d117f93"
+    },
+    "en-04": {
+        "default": "12a544c00d117f93",
+        "shingles": "be8c95e197817fb7",
+        "loose": "12a544c00d117f93"
+    },
+    "en-05": {
+        "default": "02ea9012e042f661",
+        "shingles": "06ba9c7220067745",
+        "loose": "02ea9012e042f661"
+    },
+    "en-06": {
+        "default": "e81704ff51e907bf",
+        "shingles": "eab704ebc58d8618",
+        "loose": "e81704ff51e907bf"
+    },
+    "en-07": {
+        "default": "e81704ff51e907bf",
+        "shingles": "eab704ebc58d8618",
+        "loose": "e81704ff51e907bf"
+    },
+    "en-08": {
+        "default": "ea4f8f3bd72a1333",
+        "shingles": "c34daf98d70a16b2",
+        "loose": "ea4f8f3bd72a1333"
+    },
+    "en-09": {
+        "default": "509f41d11c83592e",
+        "shingles": "409303225ce15b2e",
+        "loose": "509f41d11c83592e"
+    },
+    "en-10": {
+        "default": "08200f1ba042e0a8",
+        "shingles": "412c9f36fd82b0be",
+        "loose": "08200f1ba042e0a8"
+    },
+    "en-11": {
+        "default": "ecb6b659364a1980",
+        "shingles": "eca6f459365b0981",
+        "loose": "ecb6b659364a1980"
+    },
+    "en-12": {
+        "default": "4ce128c40816d596",
+        "shingles": "49ef29e04804f956",
+        "loose": "4ce128c40816d596"
+    },
+    "en-13": {
+        "default": "10708cd244924983",
+        "shingles": "32f00ff37ca23929",
+        "loose": "10708cd244924983"
+    },
+    "en-14": {
+        "default": "e8b50cff51e907bd",
+        "shingles": "e8b505edc1e487bd",
+        "loose": "e8b50cff51e907bd"
+    },
+    "en-15": {
+        "default": "12a584e40d511f95",
+        "shingles": "2a9b85e0bd817f35",
+        "loose": "12a584e40d511f95"
+    },
+    "ml-01": {
+        "default": "a10ad3fc9410732e",
+        "shingles": "9302d3fc9044757f",
+        "loose": "a10ad3fc9410732e"
+    },
+    "ml-02": {
+        "default": "a10ad3fc9410732e",
+        "shingles": "9302d3fc9044757f",
+        "loose": "510293f59614332e"
+    },
+    "ml-03": {
+        "default": "ac0408cbb2226e1b",
+        "shingles": "a2074ecbb232e515",
+        "loose": "ac0408cbb2226e1b"
+    },
+    "ml-04": {
+        "default": "a0b9cd6a91c8a144",
+        "shingles": "a1b1dd0ad7592805",
+        "loose": "a0b9cd6a91c8a144"
+    },
+    "ml-05": {
+        "default": "470e044145c605e2",
+        "shingles": "078f57615f465dfa",
+        "loose": "470e044145c605e2"
+    },
+    "ml-06": {
+        "default": "470e044145c605e2",
+        "shingles": "078f57615f465dfa",
+        "loose": "470e044145c605e2"
+    },
+    "ml-07": {
+        "default": "81190279e0088808",
+        "shingles": "e1995379e31c8a0d",
+        "loose": "81190279e0088808"
+    },
+    "ml-08": {
+        "default": "098140c860042260",
+        "shingles": "518148ca200f8065",
+        "loose": "098140c860042260"
+    },
+    "ml-09": {
+        "default": "1c912804a04200a0",
+        "shingles": "7e932c3da66a00a8",
+        "loose": "1c912804a04200a0"
+    },
+    "ml-10": {
+        "default": "08651e4444480708",
+        "shingles": "01641e5d4ccf0c4d",
+        "loose": "08651e4444480708"
+    },
+    "ml-11": {
+        "default": "4106511582d401f2",
+        "shingles": "d607d081e2d583e6",
+        "loose": "4106511582d401f2"
+    },
+    "ml-12": {
+        "default": "1b356f59ed72bf77",
+        "shingles": "0735235de9d33361",
+        "loose": "1b356f59ed72bf77"
+    },
+    "mx-01": {
+        "default": "4b5b9df1fc7d86e8",
+        "shingles": "4a8bb230bfec86e1",
+        "loose": "4b5b9df1fc7d86e8"
+    },
+    "mx-02": {
+        "default": "7322e74c0885cf5e",
+        "shingles": "2123b54c4aa5cf5f",
+        "loose": "7322e74c0885cf5e"
+    },
+    "mx-03": {
+        "default": "2b68800e23886407",
+        "shingles": "6828e24777a8c507",
+        "loose": "2b68800e23886407"
+    },
+    "mx-04": {
+        "default": "8294601406c04030",
+        "shingles": "924570ecc4c97a78",
+        "loose": "8294601406c04030"
+    },
+    "mx-05": {
+        "default": "314865f7e1c33b1a",
+        "shingles": "386a67d5f3eb2b1b",
+        "loose": "314865f7e1c33b1a"
+    },
+    "mx-06": {
+        "default": "290fb89d83f7a8d5",
+        "shingles": "a91dd2bf060fa8de",
+        "loose": "290fb89d83f7a8d5"
+    },
+    "mx-07": {
+        "default": "c4201cb0ace650d4",
+        "shingles": "5d8d1cf0eeae7678",
+        "loose": "c4201cb0ace650d4"
+    },
+    "mx-08": {
+        "default": "5566f2c200f13741",
+        "shingles": "d7f2d35851b93f45",
+        "loose": "5566f2c200f13741"
+    },
+    "mx-09": {
+        "default": "48a8e0510c207a0c",
+        "shingles": "6ab150502c697bfe",
+        "loose": "48a8e0510c207a0c"
+    },
+    "mx-10": {
+        "default": "a0600102908874d7",
+        "shingles": "28b4b35292c22ed5",
+        "loose": "a0600102908874d7"
+    },
+    "mx-11": {
+        "default": "124deade51c067c6",
+        "shingles": "1649eb5cf18467c4",
+        "loose": "124deade51c067c6"
+    },
+    "mx-12": {
+        "default": "6010883241027048",
+        "shingles": "400aeab2450fa6ec",
+        "loose": "6010883241027048"
+    },
+    "or-01": {
+        "default": "b9cc0b541256db6a",
+        "shingles": "d9cf0244023ed9c8",
+        "loose": "b9cc0b541256db6a"
+    },
+    "or-02": {
+        "default": "fdc6c6c0e2825035",
+        "shingles": "65c6c740e6875415",
+        "loose": "fdc6c6c0e2825035"
+    },
+    "or-03": {
+        "default": "fdc6c6c0e2825035",
+        "shingles": "65c6c740e6875415",
+        "loose": "fdc6c6c0e2825035"
+    },
+    "or-04": {
+        "default": "e88449ba34029402",
+        "shingles": "aa86c9bebc8b3443",
+        "loose": "e88449ba34029402"
+    },
+    "or-05": {
+        "default": "cc27e250e0443200",
+        "shingles": "c6a6f2556a4e7880",
+        "loose": "cc27e250e0443200"
+    },
+    "or-06": {
+        "default": "0c104881e6801150",
+        "shingles": "2e259ab7e6e931d0",
+        "loose": "0c104881e6801150"
+    },
+    "or-07": {
+        "default": "e4f16383cac84af9",
+        "shingles": "d0f94386d20baaf8",
+        "loose": "e4f16383cac84af9"
+    },
+    "or-08": {
+        "default": "0cc6903604080000",
+        "shingles": "0c549abf063c3c02",
+        "loose": "0cc6903604080000"
+    },
+    "or-09": {
+        "default": "41060c40f4994812",
+        "shingles": "15260c60d5f98a52",
+        "loose": "41060c40f4994812"
+    },
+    "or-10": {
+        "default": "2fb51c94e68d0ac8",
+        "shingles": "07f51d70e60589d8",
+        "loose": "2fb51c94e68d0ac8"
+    },
+    "or-11": {
+        "default": "4c9dad9fc998866d",
+        "shingles": "0490ecdfa9819665",
+        "loose": "4c9dad9fc998866d"
+    },
+    "or-12": {
+        "default": "35d55f9cebe1ac1f",
+        "shingles": "354f5f14ebef841b",
+        "loose": "35d55f9cebe1ac1f"
+    },
+    "sp-01": {
+        "default": "7a60d4d3709a1c87",
+        "shingles": "325004c368b81c26",
+        "loose": "500084d360920c80"
+    },
+    "sp-02": {
+        "default": "4105a52e0c091c26",
+        "shingles": "238de5ec3f091cf6",
+        "loose": "f107a57ebe491fb7"
+    },
+    "sp-03": {
+        "default": "4b0905431c0e57de",
+        "shingles": "8f0907087ece579e",
+        "loose": "cb2805441c0c7fd6"
+    },
+    "sp-04": {
+        "default": "772478850a2dce8f",
+        "shingles": "262414071cad1e8b",
+        "loose": "772478850a2dce8f"
+    },
+    "sp-05": {
+        "default": "7ee434055b0dc88f",
+        "shingles": "06643c071da90a87",
+        "loose": "7ee434055b0dc88f"
+    },
+    "sp-06": {
+        "default": "df647991bfaad901",
+        "shingles": "58e458c35902ed1c",
+        "loose": "df647991bfaad901"
+    },
+    "sp-07": {
+        "default": "df647991bfaad901",
+        "shingles": "144cf193b7909926",
+        "loose": "df647991bfaad901"
+    },
+    "sp-08": {
+        "default": "a20282b738007535",
+        "shingles": "a74ba2737a303535",
+        "loose": "8203a7f5b8805d34"
+    },
+    "sp-09": {
+        "default": "a20282b738007535",
+        "shingles": "a74ba2737a303535",
+        "loose": "c00321b538803d34"
+    },
+    "sp-10": {
+        "default": "aacfa5d709107d2b",
+        "shingles": "a9e7a3560e11332c",
+        "loose": "e2c925b71891390e"
+    },
+    "sp-11": {
+        "default": "01c216a22e349024",
+        "shingles": "63d65e9c2800d776",
+        "loose": "01c216a22e349024"
+    },
+    "sp-12": {
+        "default": "820e82d18fbcec3b",
+        "shingles": "02cf8ab18f9cec2f",
+        "loose": "b7a1a7554a4accc1"
+    },
+    "ta-01": {
+        "default": "b3d38b4f955bacdb",
+        "shingles": "f9f38ad5155b2e89",
+        "loose": "b3d38b4f955bacdb"
+    },
+    "ta-02": {
+        "default": "7fd9e6b1689ffd43",
+        "shingles": "7791a0b96a3dbd46",
+        "loose": "7fd9e6b1689ffd43"
+    },
+    "ta-03": {
+        "default": "7fd9e6b1689ffd43",
+        "shingles": "7791a0b96a3dbd46",
+        "loose": "7fd9e6b1689ffd43"
+    },
+    "ta-04": {
+        "default": "471bca6777c4921b",
+        "shingles": "4715c2475740b24b",
+        "loose": "471bca6777c4921b"
+    },
+    "ta-05": {
+        "default": "0009b44021449126",
+        "shingles": "c109bcf37b4c91a3",
+        "loose": "0009b44021449126"
+    },
+    "ta-06": {
+        "default": "3156f5c7bfe32b1a",
+        "shingles": "3986e5ceee672818",
+        "loose": "3156f5c7bfe32b1a"
+    },
+    "ta-07": {
+        "default": "008486000018c20f",
+        "shingles": "3286ce20361bc2af",
+        "loose": "008486000018c20f"
+    },
+    "ta-08": {
+        "default": "d006221000c88582",
+        "shingles": "e5d62ab043588da2",
+        "loose": "d006221000c88582"
+    },
+    "ta-09": {
+        "default": "324801a096b2c404",
+        "shingles": "3a4a21389793e462",
+        "loose": "324801a096b2c404"
+    },
+    "ta-10": {
+        "default": "e50102c2dc144b15",
+        "shingles": "e16b23f5f414471f",
+        "loose": "e50102c2dc144b15"
+    },
+    "ta-11": {
+        "default": "149255001e291165",
+        "shingles": "ddbe57221a3d006d",
+        "loose": "149255001e291165"
+    },
+    "ta-12": {
+        "default": "42428192a0061b08",
+        "shingles": "661ecddfb9559fd8",
+        "loose": "42428192a0061b08"
+    },
+    "ta-13": {
+        "default": "4300a2306895bd43",
+        "shingles": "7395a0b96ab5bd46",
+        "loose": "4300a2306895bd43"
+    },
+    "te-01": {
+        "default": "6fbaf48d7b88cd8c",
+        "shingles": "63b8728d7f089dcd",
+        "loose": "a6bce4ac77509fc8"
+    },
+    "te-02": {
+        "default": "0c203bbec055cba7",
+        "shingles": "8de013be8974cbff",
+        "loose": "0c203bbec055cba7"
+    },
+    "te-03": {
+        "default": "0c203bbec055cba7",
+        "shingles": "8de013be8974cbff",
+        "loose": "0c203bbec055cba7"
+    },
+    "te-04": {
+        "default": "d45451f8e05d5b2d",
+        "shingles": "d25415f1e44d50e9",
+        "loose": "d45451f8e05d5b2d"
+    },
+    "te-05": {
+        "default": "a0aed91020052d39",
+        "shingles": "e4ae9b5d2d55c739",
+        "loose": "a0aed91020052d39"
+    },
+    "te-06": {
+        "default": "1230b43211249488",
+        "shingles": "13f6b4163124d68a",
+        "loose": "126214280120848a"
+    },
+    "te-07": {
+        "default": "c3776c314671fdf3",
+        "shingles": "d7172d577475f928",
+        "loose": "c3776c314671fdf3"
+    },
+    "te-08": {
+        "default": "1a46c1ae7225c941",
+        "shingles": "0a4eb10f72184a55",
+        "loose": "1a46c1ae7225c941"
+    },
+    "te-09": {
+        "default": "ad446b1600640bd8",
+        "shingles": "5dc42e17297d9ef8",
+        "loose": "ad446b1600640bd8"
+    },
+    "te-10": {
+        "default": "6861d52402267e23",
+        "shingles": "4c51f136c2665f23",
+        "loose": "6861d52402267e23"
+    },
+    "te-11": {
+        "default": "d1c511088000d571",
+        "shingles": "7999268883cadc73",
+        "loose": "d1c511088000d571"
+    },
+    "te-12": {
+        "default": "fe209002a8367882",
+        "shingles": "df209300bab6fac6",
+        "loose": "fe209002a8367882"
+    },
+    "te-13": {
+        "default": "dc5453b8e445db2d",
+        "shingles": "c45416b5ac4510ed",
+        "loose": "cc7591a8e4415b2d"
+    },
+    "th-01": {
+        "default": "4161b405b46ed28f",
+        "shingles": "4561e405aca2d087",
+        "loose": "4161b405b46ed28f"
+    },
+    "th-02": {
+        "default": "4161b405b46ed28f",
+        "shingles": "4561e405aca2d087",
+        "loose": "4161b405b46ed28f"
+    },
+    "th-03": {
+        "default": "ccc127d9bcbbee0e",
+        "shingles": "ce902bf18cb1af4e",
+        "loose": "ccc127d9bcbbee0e"
+    },
+    "th-04": {
+        "default": "18cc1520c3604cce",
+        "shingles": "df8f16e11b0e4cde",
+        "loose": "18cc1520c3604cce"
+    },
+    "th-05": {
+        "default": "0eedcf534cfe28d1",
+        "shingles": "5ee5f9d174feaad3",
+        "loose": "1cedbb41207c2cd9"
+    },
+    "th-06": {
+        "default": "e115f73f33eec848",
+        "shingles": "d1b5bf3f73fe9841",
+        "loose": "c115373b33eeca40"
+    },
+    "th-07": {
+        "default": "8759cacdb0ea8960",
+        "shingles": "e368eacd18ec9070",
+        "loose": "8749ca4d10eac960"
+    },
+    "th-08": {
+        "default": "44d96ca12d1b05f2",
+        "shingles": "6599eca92c1f82fe",
+        "loose": "44d96ca12d1b05f2"
+    },
+    "th-09": {
+        "default": "0c612f80055b0653",
+        "shingles": "2c7b2ec6ae572243",
+        "loose": "0c612f80055b0653"
+    },
+    "th-10": {
+        "default": "df637451e89de607",
+        "shingles": "cd433439eedbe687",
+        "loose": "df637451e89de607"
+    },
+    "th-11": {
+        "default": "84fa3092c55a0601",
+        "shingles": "04fa70ee17da269f",
+        "loose": "84fa3092c55a0601"
+    },
+    "th-12": {
+        "default": "5822889060931298",
+        "shingles": "5866749d71337a9e",
+        "loose": "58222b3062a31a9a"
+    }
+}
