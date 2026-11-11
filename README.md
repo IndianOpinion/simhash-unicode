@@ -103,7 +103,7 @@ $simhash = new Simhash($config);
 | `ngramWeight` | `0.25` | weight of explicit `charNgrams` | yes |
 | `autoNgramWeight` | `1.0` | weight of automatic trigrams | yes |
 | `weights` | none | map of token to weight, or `fn(string $feature, string $kind, int $position, float $default): float` | yes |
-| `weightsId` | `''` | name of a weight callback, for the configuration id | yes |
+| `weightsId` | `''` | name of a weight callback, for the configuration id. Required with a callback: a closure cannot be identified by value | yes |
 | `maxInputBytes` | `4096` | 64 to 1048576 | yes |
 | `maxFeatures` | `2048` | 16 to 65536 | yes |
 | `onLongInput` | `truncate` | `truncate` (at a grapheme boundary, flagged), `throw` | no |
@@ -156,7 +156,7 @@ To see every step for one text, print `$simhash->explain($text)`: normalised tex
 
 ## Performance
 
-Measured with `php bin/benchmark.php` on a shared 2-vCPU cloud VM under load (PHP 8.3, no opcache for CLI, no JIT). This machine runs a plain PHP loop about three to four times slower than a typical modern server, so treat these as upper bounds:
+Measured with `php bin/benchmark.php` on a shared 2-vCPU cloud VM under load (PHP 8.3, no opcache for CLI, no JIT). On this VM the same run varies by about two times with load: a quieter run gave a 34 microsecond median for the English title and 9.7 s for brute force. These are measurements on one small machine, not a promise for yours; run the script on your own hardware before you size anything.
 
 | Operation | Result |
 |---|---|
@@ -173,7 +173,7 @@ Brute force is quadratic. For large lists at threshold 6, either use threshold 3
 
 - **Short text.** With fewer than about five tokens, one changed word moves the fingerprint a long way, and unrelated texts can land close by chance. `minTokens` stops false matches; it does not create recall. On the fixture corpus, changing one content word in a ten-word English title gives distance 9, above the default threshold.
 - **Paraphrase and translation are not detected.** Two titles that say the same thing in different words, or in different languages, are far apart. Use embeddings for that.
-- **Numbers.** "Sensex up 312 points" and "Sensex up 145 points" share most tokens. `digits: mask` makes them identical on purpose. If numbers matter, compare them separately.
+- **Numbers.** "Share index up 312 points" and "Share index up 145 points" share most tokens. `digits: mask` makes them identical on purpose. If numbers matter, compare them separately.
 - **Boilerplate** pulls unrelated titles together. See [Removing boilerplate](#removing-boilerplate).
 - **Without intl,** NFC and NFKC are skipped, so fullwidth Latin or compatibility forms are not folded. The library does not fail: it sets the `normalisation_unavailable` flag and adds `-nonorm` to the configuration id, so these fingerprints never match ones from a host with intl. Choose `form: 'none'` explicitly if you accept that everywhere.
 - **Unicode versions.** Character tables come from the PCRE, mbstring and ICU builds on the host. Characters newer than the oldest runtime you use may tokenise differently between hosts. The test corpus avoids them.

@@ -84,7 +84,17 @@ hasher's `id()` is part of the configuration id.
 
 When intl is loaded, grapheme clusters come from ICU (`grapheme_extract`).
 Without it, a built-in rule keeps every combining mark (Mn, Mc, Me), ZWJ,
-ZWNJ and variation selector attached to the character before it. On top of
+ZWNJ and variation selector attached to the character before it. The rule
+also covers the letters that Unicode's grapheme rules treat specially and
+that can appear inside a token: Thai and Lao sara am (spacing marks), the
+halfwidth katakana sound marks (extend), prepended letters such as the
+Malayalam dot reph (GB9b), and conjoining Hangul jamo (GB6 to GB8). A test
+hashes the whole corpus with `form: none` through both paths and requires the
+same bits, because with `form: none` the configuration id is the same on both
+hosts. One known gap remains: a precomposed Hangul syllable with a final
+consonant followed by a lone vowel jamo, which ICU splits and the built-in
+rule keeps together. NFKC composes such input, so it only matters with
+`form: none`. On top of
 both, one library rule merges a cluster that ends in a joining virama with a
 following letter, so a conjunct is one aksara. ICU 74 (Unicode 15.1, rule
 GB9c) already does this for Devanagari, Bengali, Gujarati, Odia, Telugu and
@@ -197,7 +207,19 @@ Unicode for many years, so the golden fingerprints hold on PHP 8.1, 8.2 and
 - **Weight callback signature.** `fn(string $feature, string $kind, int
   $position, float $default)`. Kinds are `word`, `shingle` and `ngram`. The
   position is the index of the first token. A callback cannot be identified
-  by value, so the caller names it with `weightsId` for the configuration id.
+  by value, so the caller must name it with `weightsId` for the
+  configuration id; a callback without one raises `ConfigException`, since
+  two different callbacks would otherwise share an id and compare as equal.
+- **Exact weights.** Weights enter the configuration id with six decimals
+  when that is exact and as their IEEE 754 bytes otherwise, and bit counters
+  are grouped by the exact float. Neither depends on the `precision` or
+  `serialize_precision` ini settings.
+- **Hostile input stays linear.** UTF-8 validation and scrubbing scan in
+  bounded steps, so neither the result nor the cost depends on PCRE's JIT or
+  backtrack limit. Truncation walks back at most 64 code points to find a
+  grapheme boundary and otherwise cuts at a code point boundary. The e-mail
+  pattern only starts where a local part can start. The test suite feeds
+  near-1 MB hostile inputs with the largest allowed cap.
 - **Near check order.** `empty`, then `config_mismatch` (an empty id, as on a
   bare parsed fingerprint, counts as a mismatch), then `too_short` (a parsed
   fingerprint without a token count counts as too short when `minTokens` is
