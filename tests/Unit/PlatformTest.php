@@ -15,6 +15,7 @@ use IndianOpinion\Simhash\Platform;
 use IndianOpinion\Simhash\Simhash;
 use IndianOpinion\Simhash\Tests\Support\Corpus;
 use IndianOpinion\Simhash\Tests\Support\TestCase;
+use PHPUnit\Framework\Attributes\RequiresPhpExtension;
 
 /**
  * T49 (B59), T50 (B60), T51 (B61, B62 as decided in ARCHITECTURE.md).
@@ -98,6 +99,7 @@ final class PlatformTest extends TestCase
         new Simhash();
     }
 
+    #[RequiresPhpExtension('intl')]
     public function testMissingIntlSkipsNormalisationAndFlagsIt(): void
     {
         $text = Corpus::text('hi-01');

@@ -9,7 +9,12 @@ namespace IndianOpinion\Simhash;
  *
  * When intl is loaded, extended grapheme clusters come from ICU. Without it,
  * a built-in rule keeps every combining mark (categories Mn, Mc, Me), ZWJ,
- * ZWNJ and variation selector attached to the character before it.
+ * ZWNJ, variation selector and the few letters Unicode treats as marks
+ * attached to the character before it, attaches prepended letters to the
+ * character after them, and keeps conjoining Hangul jamo together. Tokens
+ * only hold letters, digits, marks and joiners, so these rules cover every
+ * case the two paths can see (one known gap: a precomposed Hangul syllable
+ * with a final consonant followed by a lone vowel jamo, which ICU splits).
  *
  * On top of either, one library rule is applied: a cluster that ends in a
  * joining Indic virama (ignoring trailing joiners) is merged with a following
@@ -37,7 +42,27 @@ final class Graphemes
     public const JOINING_VIRAMA = '\x{094D}\x{09CD}\x{0A4D}\x{0ACD}\x{0B4D}\x{0C4D}\x{0CCD}'
         . '\x{0D3B}\x{0D3C}\x{0D4D}\x{1B44}\x{A8C4}\x{11046}';
 
-    private const EXTEND = '\p{M}\x{200C}\x{200D}\x{FE00}-\x{FE0F}';
+    /**
+     * Attached to the character before: marks, joiners, variation selectors,
+     * and the few letters that Unicode's grapheme rules treat as marks (Thai
+     * and Lao sara am, which are spacing marks, and the halfwidth katakana
+     * sound marks, which extend).
+     */
+    private const EXTEND = '\p{M}\x{200C}\x{200D}\x{FE00}-\x{FE0F}\x{0E33}\x{0EB3}\x{FF9E}\x{FF9F}';
+
+    /**
+     * Prepended letters (Unicode rule GB9b) that attach to the character
+     * after them, such as the Malayalam dot reph.
+     */
+    private const PREPEND = '\x{0D4E}\x{111C2}\x{111C3}\x{11A3A}\x{11A84}-\x{11A89}\x{11D46}\x{11F02}';
+
+    /**
+     * Conjoining Hangul jamo (Unicode rules GB6 to GB8): leading consonants,
+     * vowels, trailing consonants, and precomposed syllables.
+     */
+    private const HANGUL = '(?:[\x{1100}-\x{115F}\x{A960}-\x{A97C}]*+'
+        . '(?:[\x{1160}-\x{11A7}\x{D7B0}-\x{D7C6}]++|[\x{AC00}-\x{D7A3}][\x{1160}-\x{11A7}\x{D7B0}-\x{D7C6}]*+)?+'
+        . '[\x{11A8}-\x{11FF}\x{D7CB}-\x{D7FB}]*+)';
 
     private function __construct()
     {
@@ -97,7 +122,13 @@ final class Graphemes
      */
     private static function fallback(string $text): array
     {
-        $n = preg_match_all('/[' . self::EXTEND . ']++|[^' . self::EXTEND . '][' . self::EXTEND . ']*+/u', $text, $m);
+        $n = preg_match_all(
+            '/[' . self::EXTEND . ']++'
+            . '|[' . self::PREPEND . ']*+(?:(?=[\x{1100}-\x{11FF}\x{A960}-\x{A97C}\x{AC00}-\x{D7A3}\x{D7B0}-\x{D7FB}])'
+            . self::HANGUL . '|[^' . self::EXTEND . '])[' . self::EXTEND . ']*+/u',
+            $text,
+            $m
+        );
         if ($n === false) {
             return [];
         }

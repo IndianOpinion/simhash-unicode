@@ -9,6 +9,7 @@ use IndianOpinion\Simhash\Simhash;
 use IndianOpinion\Simhash\Tests\Support\Corpus;
 use IndianOpinion\Simhash\Tests\Support\TestCase;
 use Normalizer;
+use PHPUnit\Framework\Attributes\RequiresPhpExtension;
 
 /**
  * T22 (B22, B25), T23 (B23, B25), T24 (B24).
@@ -18,6 +19,7 @@ use Normalizer;
  */
 final class NormalisationTest extends TestCase
 {
+    #[RequiresPhpExtension('intl')]
     public function testFullwidthAndLigaturesEqualUnderNfkc(): void
     {
         $plain = 'Fullwidth title from a feed';
@@ -37,6 +39,7 @@ final class NormalisationTest extends TestCase
         self::assertSame(0, self::distance('efficient office files', $lig, $nfkcNoFold));
     }
 
+    #[RequiresPhpExtension('intl')]
     public function testNfcFixesCompositionOnly(): void
     {
         $composed = "caf\u{00E9} culture weekly";
@@ -79,6 +82,7 @@ final class NormalisationTest extends TestCase
         }
     }
 
+    #[RequiresPhpExtension('intl')]
     public function testNormaliseFoldNormaliseOrder(): void
     {
         // U+01F0 folds to j + U+030C, which is not in NFC. The second
@@ -91,6 +95,7 @@ final class NormalisationTest extends TestCase
         self::assertSame("\u{01F0}ournal", $tokens[0][0]);
     }
 
+    #[RequiresPhpExtension('intl')]
     public function testEveryTokenIsInNormalForm(): void
     {
         $s = new Simhash();

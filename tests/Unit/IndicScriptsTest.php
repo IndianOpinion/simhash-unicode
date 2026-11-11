@@ -9,6 +9,7 @@ use IndianOpinion\Simhash\Graphemes;
 use IndianOpinion\Simhash\Simhash;
 use IndianOpinion\Simhash\Tests\Support\Corpus;
 use IndianOpinion\Simhash\Tests\Support\TestCase;
+use PHPUnit\Framework\Attributes\RequiresPhpExtension;
 
 /**
  * T5 to T12 and T21: Indic scripts, marks, chillu, grapheme n-grams.
@@ -30,6 +31,7 @@ final class IndicScriptsTest extends TestCase
         }
     }
 
+    #[RequiresPhpExtension('intl')]
     public function testNuktaFormsAreEqualUnderNormalisation(): void
     {
         $precomposed = "\u{095C}"; // DEVANAGARI LETTER DDDHA

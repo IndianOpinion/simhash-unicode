@@ -4,10 +4,13 @@ declare(strict_types=1);
 
 namespace IndianOpinion\Simhash\Tests\Unit;
 
+use IndianOpinion\Simhash\Config;
 use IndianOpinion\Simhash\Graphemes;
+use IndianOpinion\Simhash\Platform;
 use IndianOpinion\Simhash\Simhash;
 use IndianOpinion\Simhash\Tests\Support\Corpus;
 use IndianOpinion\Simhash\Tests\Support\TestCase;
+use PHPUnit\Framework\Attributes\RequiresPhpExtension;
 
 /**
  * T52 (B63, B21), T53 (B64), T54 (section 10, locale).
@@ -27,6 +30,7 @@ final class DeterminismTest extends TestCase
         }
     }
 
+    #[RequiresPhpExtension('intl')]
     public function testGoldenCorpus(): void
     {
         $golden = Corpus::json('golden.json');
@@ -75,6 +79,53 @@ final class DeterminismTest extends TestCase
             }
         } finally {
             setlocale(LC_ALL, $old === false ? 'C' : $old);
+        }
+    }
+
+    /**
+     * With form none the configuration id is the same with and without intl,
+     * so the two grapheme paths must give the same bits on every fixture.
+     */
+    public function testGraphemePathsAgreeOnWholeCorpus(): void
+    {
+        $configs = [
+            new Config(form: Config::FORM_NONE),
+            new Config(form: Config::FORM_NONE, charNgrams: 2, autoCharNgrams: Config::AUTO_NGRAMS_ON),
+        ];
+        foreach ($configs as $config) {
+            $icu = [];
+            foreach (Corpus::titles() as $id => $row) {
+                $icu[$id] = (new Simhash($config))->hash($row['text'])->hex();
+            }
+            Platform::simulate(intl: false);
+            $fallback = new Simhash($config);
+            foreach (Corpus::titles() as $id => $row) {
+                self::assertSame($icu[$id], $fallback->hash($row['text'])->hex(), $id);
+            }
+            Platform::reset();
+        }
+    }
+
+    /**
+     * Letters that Unicode's grapheme rules treat as marks or prefixes.
+     */
+    public function testFallbackFollowsGraphemeRulesForLetterMarks(): void
+    {
+        $cases = [
+            'thai sara am' => ["\u{0E19}\u{0E49}\u{0E33}\u{0E2B}", ["\u{0E19}\u{0E49}\u{0E33}", "\u{0E2B}"]],
+            'lao sara am' => ["\u{0E99}\u{0EB3}", ["\u{0E99}\u{0EB3}"]],
+            'halfwidth sound mark' => ["\u{FF76}\u{FF9E}\u{FF77}", ["\u{FF76}\u{FF9E}", "\u{FF77}"]],
+            'malayalam dot reph' => ["\u{0D4E}\u{0D2E}", ["\u{0D4E}\u{0D2E}"]],
+            'hangul jamo' => [
+                "\u{1100}\u{1161}\u{11A8}\u{1100}\u{1161}",
+                ["\u{1100}\u{1161}\u{11A8}", "\u{1100}\u{1161}"],
+            ],
+        ];
+        foreach ($cases as $name => [$text, $expected]) {
+            self::assertSame($expected, Graphemes::splitWithoutIntl($text), 'fallback ' . $name);
+            if (Platform::hasIntl()) {
+                self::assertSame($expected, Graphemes::split($text), 'intl ' . $name);
+            }
         }
     }
 }

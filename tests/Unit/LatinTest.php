@@ -6,6 +6,7 @@ namespace IndianOpinion\Simhash\Tests\Unit;
 
 use IndianOpinion\Simhash\Config;
 use IndianOpinion\Simhash\Tests\Support\TestCase;
+use PHPUnit\Framework\Attributes\RequiresPhpExtension;
 
 /**
  * T2 (B1), T3 (B2), T4 (B3).
@@ -25,6 +26,7 @@ final class LatinTest extends TestCase
         self::assertSame(['café', 'são', 'paulo'], self::tokens('Café São Paulo'));
     }
 
+    #[RequiresPhpExtension('intl')]
     public function testDiacriticsFoldedWhenAsked(): void
     {
         $config = new Config(foldLatinDiacritics: true);
@@ -32,6 +34,7 @@ final class LatinTest extends TestCase
         self::assertSame(['ελλαδα', 'елка'], self::tokens('Ελλάδα ёлка', $config));
     }
 
+    #[RequiresPhpExtension('intl')]
     public function testDiacriticFoldingNeverTouchesIndicMarks(): void
     {
         $config = new Config(foldLatinDiacritics: true);
