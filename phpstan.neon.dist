@@ -1,0 +1,10 @@
+parameters:
+    level: 8
+    paths:
+        - src
+        - bootstrap.php
+        - tests
+        - examples
+        - bin
+    tmpDir: .phpstan.cache
+    treatPhpDocTypesAsCertain: false

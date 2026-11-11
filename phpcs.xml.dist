@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<ruleset name="simhash-unicode">
+    <description>PSR-12 for simhash-unicode.</description>
+    <file>src</file>
+    <file>tests</file>
+    <file>examples</file>
+    <file>bin</file>
+    <file>bootstrap.php</file>
+    <arg name="extensions" value="php"/>
+    <arg name="colors"/>
+    <arg value="sp"/>
+    <rule ref="PSR12"/>
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="120"/>
+            <property name="absoluteLineLimit" value="160"/>
+        </properties>
+    </rule>
+    <!-- bootstrap.php and the CLI scripts declare an autoloader or run code by design. -->
+    <rule ref="PSR1.Files.SideEffects.FoundWithSymbols">
+        <exclude-pattern>bootstrap.php</exclude-pattern>
+    </rule>
+</ruleset>
