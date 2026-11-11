@@ -77,8 +77,8 @@ final class OtherScriptsTest extends TestCase
         self::assertSame(['ipl', 'मैच'], self::tokens('IPLमैच'));
         self::assertSame(['g20', 'सम्मेलन'], self::tokens('G20 सम्मेलन'));
         self::assertSame(['covid', '19'], self::tokens('COVID-19'));
-        self::assertSame(['apple', '发布', '布新', '新款', 'iphone', '手机'], self::tokens(Corpus::text('mx-09')));
-        self::assertSame(['bmw', 'の新', '新型'], array_slice(self::tokens(Corpus::text('mx-08')), 0, 3));
+        self::assertSame(['app', '帮助', '助农', '农民', '民查', '查看', '看天', '天气'], self::tokens(Corpus::text('mx-09')));
+        self::assertSame(['ev', 'の新', '新型'], array_slice(self::tokens(Corpus::text('mx-08')), 0, 3));
     }
 
     public function testDigitsTakeTheScriptBeforeThem(): void

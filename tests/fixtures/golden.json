@@ -276,9 +276,9 @@
         "loose": "f084a4bd96517374"
     },
     "hi-06": {
-        "default": "e2cf9188dc835740",
-        "shingles": "e1efc0985c83756b",
-        "loose": "e2cf9188dc835740"
+        "default": "734ad3b8fca67366",
+        "shingles": "510fc1b476a435e2",
+        "loose": "734ad3b8fca67366"
     },
     "hi-07": {
         "default": "10c64251a20e57d3",
@@ -586,14 +586,14 @@
         "loose": "02ea9012e042f661"
     },
     "en-06": {
-        "default": "e81704ff51e907bf",
-        "shingles": "eab704ebc58d8618",
-        "loose": "e81704ff51e907bf"
+        "default": "d08504d891cd1f93",
+        "shingles": "d08f04c8c9cd9717",
+        "loose": "d08504d891cd1f93"
     },
     "en-07": {
-        "default": "e81704ff51e907bf",
-        "shingles": "eab704ebc58d8618",
-        "loose": "e81704ff51e907bf"
+        "default": "d08504d891cd1f93",
+        "shingles": "d08f04c8c9cd9717",
+        "loose": "d08504d891cd1f93"
     },
     "en-08": {
         "default": "ea4f8f3bd72a1333",
@@ -626,9 +626,9 @@
         "loose": "10708cd244924983"
     },
     "en-14": {
-        "default": "e8b50cff51e907bd",
-        "shingles": "e8b505edc1e487bd",
-        "loose": "e8b50cff51e907bd"
+        "default": "908500c891c11793",
+        "shingles": "f08500c8c9cd9717",
+        "loose": "908500c891c11793"
     },
     "en-15": {
         "default": "12a584e40d511f95",
@@ -696,29 +696,29 @@
         "loose": "1b356f59ed72bf77"
     },
     "mx-01": {
-        "default": "4b5b9df1fc7d86e8",
-        "shingles": "4a8bb230bfec86e1",
-        "loose": "4b5b9df1fc7d86e8"
+        "default": "108001904ca26463",
+        "shingles": "15c081b2fcaa6245",
+        "loose": "108001904ca26463"
     },
     "mx-02": {
-        "default": "7322e74c0885cf5e",
-        "shingles": "2123b54c4aa5cf5f",
-        "loose": "7322e74c0885cf5e"
+        "default": "d30382440005c754",
+        "shingles": "f3a6e16c10b7a7d4",
+        "loose": "d30382440005c754"
     },
     "mx-03": {
-        "default": "2b68800e23886407",
-        "shingles": "6828e24777a8c507",
-        "loose": "2b68800e23886407"
+        "default": "ebe4a09df7c767e7",
+        "shingles": "eba8b2a9fa87d7e2",
+        "loose": "ebe4a09df7c767e7"
     },
     "mx-04": {
-        "default": "8294601406c04030",
-        "shingles": "924570ecc4c97a78",
-        "loose": "8294601406c04030"
+        "default": "2a77f1f056f31f0a",
+        "shingles": "3873ba3f7ff8075f",
+        "loose": "2a77f1f056f31f0a"
     },
     "mx-05": {
-        "default": "314865f7e1c33b1a",
-        "shingles": "386a67d5f3eb2b1b",
-        "loose": "314865f7e1c33b1a"
+        "default": "0200001a80170377",
+        "shingles": "220a269b90871977",
+        "loose": "0200001a80170377"
     },
     "mx-06": {
         "default": "290fb89d83f7a8d5",
@@ -731,14 +731,14 @@
         "loose": "c4201cb0ace650d4"
     },
     "mx-08": {
-        "default": "5566f2c200f13741",
-        "shingles": "d7f2d35851b93f45",
-        "loose": "5566f2c200f13741"
+        "default": "63f4b23e849af862",
+        "shingles": "ab36242c2512fc66",
+        "loose": "63f4b23e849af862"
     },
     "mx-09": {
-        "default": "48a8e0510c207a0c",
-        "shingles": "6ab150502c697bfe",
-        "loose": "48a8e0510c207a0c"
+        "default": "24100601821c218a",
+        "shingles": "549086291f7e3faa",
+        "loose": "24100601821c218a"
     },
     "mx-10": {
         "default": "a0600102908874d7",
@@ -746,9 +746,9 @@
         "loose": "a0600102908874d7"
     },
     "mx-11": {
-        "default": "124deade51c067c6",
-        "shingles": "1649eb5cf18467c4",
-        "loose": "124deade51c067c6"
+        "default": "5693bdfe53ec7216",
+        "shingles": "540afd7673e67e12",
+        "loose": "5693bdfe53ec7216"
     },
     "mx-12": {
         "default": "6010883241027048",
@@ -831,14 +831,14 @@
         "loose": "cb2805441c0c7fd6"
     },
     "sp-04": {
-        "default": "772478850a2dce8f",
-        "shingles": "262414071cad1e8b",
-        "loose": "772478850a2dce8f"
+        "default": "24a47883082c880a",
+        "shingles": "24a4748318b81e2a",
+        "loose": "24a47883082c880a"
     },
     "sp-05": {
-        "default": "7ee434055b0dc88f",
-        "shingles": "06643c071da90a87",
-        "loose": "7ee434055b0dc88f"
+        "default": "04e4340358088802",
+        "shingles": "04e47c0758a81206",
+        "loose": "04e4340358088802"
     },
     "sp-06": {
         "default": "df647991bfaad901",

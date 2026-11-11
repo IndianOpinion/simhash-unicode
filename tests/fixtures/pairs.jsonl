@@ -3,7 +3,7 @@
 {"a": "en-03", "b": "en-04", "relation": "near", "note": "case only"}
 {"a": "en-06", "b": "en-07", "relation": "near", "note": "trailing full stop"}
 {"a": "en-01", "b": "en-13", "relation": "near", "note": "same words reordered, one added"}
-{"a": "en-06", "b": "en-14", "relation": "near", "note": "articles removed"}
+{"a": "en-06", "b": "en-14", "relation": "near", "note": "one article removed"}
 {"a": "en-03", "b": "en-15", "relation": "far", "note": "one content word changed: simhash limit, see README"}
 {"a": "en-01", "b": "en-05", "relation": "far", "note": "unrelated"}
 {"a": "en-08", "b": "en-12", "relation": "far", "note": "unrelated"}
