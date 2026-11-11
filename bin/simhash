@@ -1,0 +1,32 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * Development helper: hashes each line of stdin with the default
+ * configuration and prints hex, token count and flags, tab separated.
+ *
+ *     printf 'भारत में मानसून\nMonsoon in Kerala\n' | php bin/simhash
+ *
+ * Not autoloaded and not part of the public API.
+ */
+
+declare(strict_types=1);
+
+require __DIR__ . '/../bootstrap.php';
+
+use IndianOpinion\Simhash\Exception\SimhashException;
+use IndianOpinion\Simhash\Simhash;
+
+$simhash = new Simhash();
+$status = 0;
+while (($line = fgets(STDIN)) !== false) {
+    $line = rtrim($line, "\r\n");
+    try {
+        $fp = $simhash->hash($line);
+        fwrite(STDOUT, $fp->hex() . "\t" . (int) $fp->tokenCount() . "\t" . implode(',', $fp->flags()) . "\n");
+    } catch (SimhashException $e) {
+        fwrite(STDERR, 'error: ' . $e->getMessage() . "\n");
+        $status = 1;
+    }
+}
+exit($status);
