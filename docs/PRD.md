@@ -653,7 +653,7 @@ PHPUnit 10. Each test names the cases it covers. Fixture files live in
   CC0 dedication are recorded per file in a header.
 - Files are UTF-8 JSON lines: id, language code, script, text, and for
   pair files the expected relation (near or far).
-- Golden fingerprints are generated once by the builder, reviewed by eye
+- Golden fingerprints are produced once by the builder, reviewed by eye
   against `explain` output, and committed. Regenerating them is a
   deliberate, reviewed act tied to an algorithm version bump.
 
